@@ -2,6 +2,8 @@
 
 A browser Game Maker 6–style IDE: sprites, objects (events + documented simple-logic actions), rooms, sounds, and paths. Play in the IDE, export a standalone HTML game, and share it as a link.
 
+**Live:** https://samg-coder.github.io/gmlab-web-game-maker/
+
 Public repo: https://github.com/SamG-Coder/gmlab-web-game-maker
 
 The engine is plain JavaScript. ASP.NET hosts it locally. The `wwwroot` tree is CDN-ready (`<script src>` only — no modules).
@@ -68,7 +70,7 @@ wwwroot/
   docs/events-and-actions.html
 ```
 
-Upload that folder to GitHub Pages, Netlify, or any CDN. Opening `index.html` as `file://` still runs (no ES modules). Share and the Gemini proxy need HTTP; the yellow banner says so instead of a blank page.
+This repo deploys that folder to GitHub Pages on every push to `main` (see `.github/workflows/pages.yml`). Opening `index.html` as `file://` still runs (no ES modules). Share and the Gemini proxy need the ASP.NET host; the yellow banner says so instead of a blank page.
 
 ## Project layout
 
