@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gmlab events and actions</title>
+  <link rel="stylesheet" href="../css/ide.css">
+  <style>
+    body { padding: 1.5rem; max-width: 52rem; margin: 0 auto; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <p><a href="../index.html">← Back to the IDE</a></p>
+  <article id="doc">Loading catalog…</article>
+  <script src="../js/gmlab-docs.js"></script>
+  <script>
+    (function () {
+      var md = Gmlab.Docs.toMarkdown();
+      var html = md
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/^# (.*)$/gm, "<h1>$1</h1>")
+        .replace(/^## (.*)$/gm, "<h2>$1</h2>")
+        .replace(/^### (.*)$/gm, "<h3>$1</h3>")
+        .replace(/^- (.*)$/gm, "<li>$1</li>")
+        .replace(/`([^`]+)`/g, "<code>$1</code>")
+        .replace(/\n\n/g, "</p><p>");
+      document.getElementById("doc").innerHTML = "<p>" + html + "</p>";
+    })();
+  </script>
+</body>
+</html>

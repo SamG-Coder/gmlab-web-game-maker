@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gmlab — Web Game Maker</title>
+  <link rel="stylesheet" href="css/ide.css">
+</head>
+<body>
+  <div id="gmlab-ide" class="editor-shell">
+    <div id="file-banner" hidden>
+      Opened as a local file. Editors and Play work offline. Share and the Gemini proxy need
+      <code>dotnet run --project src/Gmlab.Host</code> or a CDN/http URL — there is no silent
+      <code>file://</code> module page.
+    </div>
+    <header id="toolbar">
+      <span class="brand">Gmlab</span>
+      <label>Game <input id="project-name" type="text" value="Game"></label>
+      <button type="button" id="btn-new">New</button>
+      <button type="button" id="btn-sample">Demo</button>
+      <button type="button" id="btn-open">Open</button>
+      <button type="button" id="btn-save">Save</button>
+      <input id="open-file" type="file" accept="application/json,.json,.gmlab.json" hidden>
+      <button type="button" id="btn-play">Play</button>
+      <button type="button" id="btn-export">Export HTML</button>
+      <button type="button" id="btn-share">Share link</button>
+      <input id="share-url" type="text" hidden readonly>
+      <button type="button" id="btn-gemini">Gemini</button>
+      <a href="docs/events-and-actions.html" target="_blank" rel="noopener">Docs</a>
+    </header>
+    <div id="workspace">
+      <nav id="resource-tree" aria-label="Resource tree"></nav>
+      <main id="editor-host"></main>
+      <aside id="docs-pane"></aside>
+    </div>
+    <footer id="status">Ready.</footer>
+  </div>
+
+  <div id="play-overlay" hidden>
+    <div class="play-bar">Playing — Esc or <button type="button" id="btn-stop">Stop</button></div>
+    <canvas id="play-stage" width="320" height="240"></canvas>
+  </div>
+
+  <div id="gemini-panel" hidden>
+    <h3>Gemini</h3>
+    <p class="micro">Paste a Google AI Studio API key. Requests go through this host’s <code>/api/gemini</code> hook, or directly if you opened a static copy.</p>
+    <label>API key <input id="gemini-key" type="password" autocomplete="off"></label>
+    <textarea id="gemini-prompt" placeholder="Ask for object events, a room layout, or an action list…"></textarea>
+    <button type="button" id="gemini-send">Ask</button>
+    <pre id="gemini-out"></pre>
+  </div>
+
+  <script src="js/gmlab-project.js"></script>
+  <script src="js/gmlab-docs.js"></script>
+  <script src="js/gmlab-runtime.js"></script>
+  <script src="js/gmlab-export.js"></script>
+  <script src="js/gmlab-share.js"></script>
+  <script src="js/gmlab-gemini.js"></script>
+  <script src="js/gmlab-sample.js"></script>
+  <script src="js/editors/sprite-editor.js"></script>
+  <script src="js/editors/object-editor.js"></script>
+  <script src="js/editors/room-editor.js"></script>
+  <script src="js/editors/sound-editor.js"></script>
+  <script src="js/editors/path-editor.js"></script>
+  <script src="js/ide.js"></script>
+</body>
+</html>

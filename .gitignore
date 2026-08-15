@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+artifacts/
+TestResults/
+*.DotSettings.user
+.DS_Store
+Thumbs.db
+appsettings.Development.json
