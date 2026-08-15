@@ -2,6 +2,8 @@
 
 A browser Game Maker 6–style IDE: sprites, objects (events + documented simple-logic actions), rooms, sounds, and paths. Play in the IDE, export a standalone HTML game, and share it as a link.
 
+Public repo: https://github.com/SamG-Coder/gmlab-web-game-maker
+
 The engine is plain JavaScript. ASP.NET hosts it locally. The `wwwroot` tree is CDN-ready (`<script src>` only — no modules).
 
 ## Run locally
